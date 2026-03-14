@@ -6,7 +6,8 @@
   --text-primary: #f2f2f2; /* rgb(242, 242, 242) – Off-white for high contrast readability */
   --secondary: #a3a3a3; /* rgb(163, 163, 163) – Medium gray for less prominent info */
   --accent: #e4e4e7; /* rgb(228, 228, 231) – Light gray for interactive elements */
-  --text: #6b6375;
+  --text: #ccc;
+  --light-text: #888;
   --text-h: #08060d;
 
   --border: #e5e4e7;
