@@ -1,16 +1,10 @@
-import { PATHS, type Page } from "@/types";
+import { TABS, type Page } from "@/types";
 import { TabsList, TabsTrigger } from "../ui/tabs";
 
 interface PageTriggerProps {
     activeIndex: number;
     handlePageChange: (page: Page) => void;
 }
-
-const TABS = [
-    { value: PATHS.HOME, label: "Home" },
-    { value: PATHS.ABOUT, label: "About" },
-    { value: PATHS.BLOG, label: "Writings" },
-];
 
 export default function PageTriggers({ activeIndex, handlePageChange }: PageTriggerProps) {
     return (
