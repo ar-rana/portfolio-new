@@ -54,7 +54,7 @@ body {
   0%,
   100% {
     opacity: 0.85;
-    height: 320px;
+    height: 340px;
   }
   55% {
     opacity: 1;
@@ -63,7 +63,7 @@ body {
 }
 
 .app-top-breath {
-  height: 320px;
+  height: 340px;
   animation: app-top-glow-breath 18s ease-in-out infinite;
   will-change: height, opacity;
 }
