@@ -49,3 +49,27 @@
 body {
   margin: 0;
 }
+
+@keyframes app-top-glow-breath {
+  0%,
+  100% {
+    opacity: 0.85;
+    height: 320px;
+  }
+  55% {
+    opacity: 1;
+    height: 360px;
+  }
+}
+
+.app-top-breath {
+  height: 320px;
+  animation: app-top-glow-breath 18s ease-in-out infinite;
+  will-change: height, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-top-breath {
+    animation: none;
+  }
+}

@@ -6,6 +6,8 @@ import { Header } from "@/components/sections/Header";
 import { SideWaves } from "@/components/sections/SideWaves";
 import { PeacockDivider } from "@/components/sections/PeacockDivider";
 import PageTriggers from "./components/sections/PageTriggers";
+import Home from "./components/pages/Home";
+import BgGradient from "./components/sections/BgGradient";
 
 function App() {
   const location = useLocation();
@@ -21,13 +23,14 @@ function App() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen bg-bg text-(--text-primary)">
+    <main className="relative overflow-hidden flex flex-col items-center justify-start min-h-screen bg-bg text-(--text-primary)">
+      <BgGradient />
       <SideWaves />
       <Header />
       <PeacockDivider />
       <Tabs
         value={activeTab}
-        className="w-full flex flex-col items-center mt-2"
+        className="relative z-10 w-full flex flex-col items-center mt-2"
       >
         <div className="z-50 justify-center w-full px-4 flex">
           <PageTriggers
@@ -37,12 +40,12 @@ function App() {
         </div>
 
         {/* PAGE CONTENT */}
-        <div className="max-w-4xl w-full mt-32 px-6">
+        <div className="max-w-4xl w-full mt-4 px-6">
           <TabsContent
             value={PATHS.HOME}
             className="animate-in fade-in zoom-in-95 duration-500 slide-in-from-bottom-2"
           >
-            <p>sdafsd</p>
+            <Home />
           </TabsContent>
 
           <TabsContent

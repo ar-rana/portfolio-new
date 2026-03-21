@@ -3,6 +3,14 @@ import assetVideo from '@/assets/asset.webm'
 export function Header() {
     return (
         <header className="relative w-[calc(100%-32px)] max-w-xl mx-auto overflow-hidden flex items-center mt-16 rounded-md px-6 p-2">
+            <div
+                aria-hidden
+                className="pointer-events-none absolute -top-24 left-1/2 z-[1] h-[220px] w-[170%] -translate-x-1/2"
+                style={{
+                    background:
+                        "radial-gradient(ellipse at top, rgba(242,242,238,0.24) 0%, rgba(89,129,133,0.3) 36%, rgba(89,129,133,0.14) 52%, rgba(23,23,23,0) 80%)",
+                }}
+            />
             {/* Full Width Video */}
             <video
                 autoPlay
@@ -28,7 +36,8 @@ export function Header() {
             {/* Content Divider */}
             <div className="relative z-10 flex justify-between items-center gap-3 w-full">
                 <img
-                    src="/main_logo.svg"
+                    src="logos/no-bg/main_logo-360.svg"
+                    // src="/main_logo.svg"
                     alt="Logo"
                     className="object-contain w-24"
                 />
