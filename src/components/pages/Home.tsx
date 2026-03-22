@@ -17,7 +17,7 @@ const Home = () => {
       </div>
       <div aria-hidden className="h-2" />
       <div>
-        <span>When I’m not spending an arguably unhealthy amount of time looking at code, I’m usually checking up on geopolitics, world affairs and defence updates to understand the bigger picture beyond the terminal.</span>
+        <span>When I’m not spending an arguably unhealthy amount of time looking at code, I’m usually checking up on geopolitics, world affairs and defence updates to stay up-to-date with the world.</span>
       </div>
     </div>
   );
