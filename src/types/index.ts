@@ -1,8 +1,10 @@
+// Maintain the order of values inside TABS and PATHS otherwise the the navigation gets messed up
+// Like if 'WORK' is 2nd index in PATHS then it should be 2nd index in TABS also 
 export const PATHS = {
   HOME: "/",
-  ABOUT: "/about",
-  BLOG: "/blog",
+  ABOUT: "/know-more",
   WORK: "/projects",
+  BLOG: "/blog",
   CONNECT: "/contact",
 } as const;
 
@@ -11,9 +13,9 @@ export type Page = (typeof PATHS)[Path];
 
 export const TABS = [
   { value: PATHS.HOME, label: "Home" },
-  { value: PATHS.ABOUT, label: "About" },
-  { value: PATHS.BLOG, label: "Writing" },
+  { value: PATHS.ABOUT, label: "More" },
   { value: PATHS.WORK, label: "Projects" },
+  { value: PATHS.BLOG, label: "Writing" },
   { value: PATHS.CONNECT, label: "Contact" },
 ];
 export interface ProjectPanel {

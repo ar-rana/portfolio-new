@@ -1,0 +1,80 @@
+/* fixed, relative, absolute */
+.container{
+  position: absolute;
+  top: 30%;
+  right: 25%;
+}
+
+.clock {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  /* background-color */
+  background: var(--bg);
+  border: 3px solid var(--secondary);
+  box-shadow: 0px 0px 30px rgba(0,0,0,10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock span {
+  position: absolute;
+  transform: rotate(calc(15deg * var(--i)));
+  inset: 1.5px;
+  text-align: center;
+}
+
+.clock span b{
+  /* transform: rotate(calc(-15deg * var(--i))); */
+  display: inline-block;
+  font-size: 8px;
+  color: white;
+}
+
+.clock span:nth-child(9) b,
+.clock span:nth-child(15) b,
+.clock span:nth-child(21) b {
+  transform: rotate(calc(-15deg * var(--i)));
+}
+
+.clock::before{
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.hand {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hand i {
+  position: absolute;
+  border: 1px solid black;
+  width: 3px;
+  height: 50%;
+  border-radius: 8px;
+}
+
+@media (max-width: 650px) {
+  .container {
+    top: 1.5%;
+    right: 1.5%;
+  }
+  .clock {
+    width: 8rem;
+    height: 8rem;
+    border: 1.5px solid white;
+  }
+  .clock span b {
+    font-size: 8px;
+  }
+  .clock span {
+    inset: 2px;
+  }
+}

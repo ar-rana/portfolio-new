@@ -2,7 +2,7 @@ import { TypingText } from "../sections/TypingText";
 
 const Home = () => {
   return (
-    <div className="w-[calc(100%-32px)] max-w-2xl mx-auto flex flex-col items-baseline gap-2 wrap-break-word text-left">
+    <div className="max-w-2xl mx-auto flex flex-col items-baseline gap-2 wrap-break-word text-left">
       <div>
         <span className="italic font-semibold">hello, </span>
         <TypingText />
@@ -17,7 +17,7 @@ const Home = () => {
       </div>
       <div aria-hidden className="h-2" />
       <div>
-        <span>When I’m not spending an arguably unhealthy amount of time looking at code, I’m usually reading up on geopolitics and world affairs to understand the bigger picture beyond the terminal.</span>
+        <span>When I’m not spending an arguably unhealthy amount of time looking at code, I’m usually checking up on geopolitics, world affairs and defence updates to understand the bigger picture beyond the terminal.</span>
       </div>
     </div>
   );
