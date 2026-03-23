@@ -10,6 +10,7 @@ const defaultImg = "/projects/defaultImg.png";
 const ecommerce = "/projects/ecommerce.png";
 const disasterSys = "/projects/disasterSys.png";
 const scribeAI = "/projects/scribeAI.png";
+const finup = "/projects/finup.png"
 
 export const projects: ProjectPanel[] = [
   {
@@ -45,6 +46,13 @@ export const projects: ProjectPanel[] = [
       "Next.js v14, TailwindCSS, Socket.io, Node.js, ExpressJS, Redis, Kafka, Prisma, PostgreSQL, OAuth",
     github: "https://github.com/ar-rana/ChatApp-2.0",
     img: chatApp,
+  },
+  {
+    title: "finUp",
+    techStk: "Golang, CosmosDB, React, Tailwind, Recharts, Azure functions",
+    github: "https://github.com/ar-rana/Finance-Tracker",
+    img: finup,
+    project_link: "http://finup.shores.cv/"
   },
   {
     title: "Spring Search",

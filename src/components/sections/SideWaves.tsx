@@ -30,7 +30,7 @@ export function SideWaves({ left = false }: SideWavesProps) {
         attemptPlay()
     }, [])
 
-    const containerClasses = `fixed bottom-0 translate-y-[30%] md:translate-y-[45%] lg:translate-y-[50%] w-full z-0 pointer-events-none mix-blend-screen transform-gpu ${left ? 'left-0 rotate-[170deg] scale-x-[-1]' : 'right-0 rotate-190'}`
+    const containerClasses = `fixed bottom-0 translate-y-[30%] md:translate-y-[45%] lg:translate-y-[50%] w-full z-20 pointer-events-none mix-blend-screen transform-gpu ${left ? 'left-0 rotate-[170deg] scale-x-[-1]' : 'right-0 rotate-190'}`
 
     return (
         <div className={containerClasses}>

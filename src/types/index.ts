@@ -8,9 +8,6 @@ export const PATHS = {
   CONNECT: "/contact",
 } as const;
 
-export type Path = keyof typeof PATHS;
-export type Page = (typeof PATHS)[Path];
-
 export const TABS = [
   { value: PATHS.HOME, label: "Home" },
   { value: PATHS.ABOUT, label: "More" },
@@ -18,6 +15,9 @@ export const TABS = [
   { value: PATHS.BLOG, label: "Writing" },
   { value: PATHS.CONNECT, label: "Contact" },
 ];
+
+export type Path = keyof typeof PATHS;
+export type Page = (typeof PATHS)[Path];
 export interface ProjectPanel {
   title: string;
   techStk: string;

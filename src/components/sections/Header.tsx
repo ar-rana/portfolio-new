@@ -2,7 +2,7 @@ import assetVideo from '@/assets/asset.webm'
 
 export function Header() {
     return (
-        <header className="relative w-[calc(100%-32px)] max-w-xl mx-auto overflow-hidden flex items-center mt-16 rounded-md px-6 p-2">
+        <header className="relative z-40 w-[calc(100%-32px)] max-w-xl mx-auto overflow-hidden flex items-center mt-16 rounded-md px-6 p-2">
             <div
                 aria-hidden
                 className="pointer-events-none absolute -top-24 left-1/2 z-[1] h-[220px] w-[170%] -translate-x-1/2"
