@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tabs } from "@/components/ui/tabs";
 import { PATHS, type Page } from "./types";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -21,6 +21,11 @@ function App() {
     setActiveTab(page);
     navigate(page);
   };
+
+  useEffect(() => {
+    const pg = location.pathname as Page;
+    handlePageChange(pg);
+  }, [location.pathname])
 
   return (
     <main className="relative overflow-hidden flex flex-col items-center justify-start min-h-screen bg-bg text-(--text-primary)">

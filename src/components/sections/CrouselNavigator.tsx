@@ -1,5 +1,3 @@
-import React from "react";
-
 interface CrouselNavigatorProps {
   currentIdx: number;
   totalLength: number;
@@ -24,7 +22,6 @@ const CrouselNavigator = ({
               className={`rounded-full bg-(--text-primary) transition-all cursor-pointer size-2 ${
                 isActive ? "opacity-100" : "opacity-40"
               }`}
-              aria-label={`Go to project ${index + 1}`}
             />
           );
         })}
