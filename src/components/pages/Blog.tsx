@@ -11,6 +11,8 @@ import {
 
 const WHEEL_INERTIA_FACTOR = 1.05;
 const WHEEL_FRICTION_FACTOR = 0.1;
+const WHEEL_STOP_THRESHOLD = 0.1;
+const WHEEL_MAX_VELOCITY = 45;
 
 const Blog = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
@@ -54,7 +56,7 @@ const Blog = () => {
     const animateWheelInertia = () => {
       const velocity = wheelVelocityRef.current;
 
-      if (Math.abs(velocity) < 0.1) {
+      if (Math.abs(velocity) < WHEEL_STOP_THRESHOLD) {
         wheelVelocityRef.current = 0;
         wheelRafRef.current = null;
         return;
@@ -79,8 +81,8 @@ const Blog = () => {
 
       wheelVelocityRef.current -= delta * WHEEL_INERTIA_FACTOR;
       wheelVelocityRef.current = Math.max(
-        -45,
-        Math.min(45, wheelVelocityRef.current)
+        -WHEEL_MAX_VELOCITY,
+        Math.min(WHEEL_MAX_VELOCITY, wheelVelocityRef.current)
       );
 
       if (wheelRafRef.current === null) {
