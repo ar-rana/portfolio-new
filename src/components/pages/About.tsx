@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Clock from "../sections/Clock/Clock";
 import {
   Tooltip,
@@ -8,6 +9,21 @@ import {
 import CertificatesCrousel from "../sections/CertificatesCrousel";
 
 const About = () => {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isDsaOpen, setIsDsaOpen] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    const updateTouchState = () => setIsTouchDevice(mediaQuery.matches);
+    updateTouchState();
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", updateTouchState);
+      return () => mediaQuery.removeEventListener("change", updateTouchState);
+    }
+    mediaQuery.addListener(updateTouchState);
+    return () => mediaQuery.removeListener(updateTouchState);
+  }, []);
+
   return (
     <div className="max-w-lg mx-auto flex flex-col items-baseline gap-2 wrap-break-word text-left">
       <Clock />
@@ -53,16 +69,28 @@ const About = () => {
       </a>
 
       <TooltipProvider>
-        <Tooltip>
+        <Tooltip
+          open={isTouchDevice ? isDsaOpen : undefined}
+          onOpenChange={isTouchDevice ? setIsDsaOpen : undefined}
+        >
           <TooltipTrigger asChild>
-            <div className="inline-flex list-none cursor-pointer items-center">
+            <button
+              type="button"
+              className="inline-flex list-none cursor-pointer items-center border-0 bg-transparent p-0 text-inherit"
+              aria-expanded={isTouchDevice ? isDsaOpen : undefined}
+              onClick={
+                isTouchDevice
+                  ? () => setIsDsaOpen((prevOpen) => !prevOpen)
+                  : undefined
+              }
+            >
               <i className="bi bi-fire mr-1 text-[1.2em]" aria-hidden="true" />
               <span>DSA</span>
               <i
                 className="bi bi-chevron-down ml-1 text-[0.8em] transition-transform group-open:rotate-180"
                 aria-hidden="true"
               />
-            </div>
+            </button>
           </TooltipTrigger>
           <TooltipContent
             side="bottom"

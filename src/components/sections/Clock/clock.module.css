@@ -1,5 +1,5 @@
 /* fixed, relative, absolute */
-.container{
+.container {
   position: absolute;
   top: 25%;
   right: 25%;
@@ -12,7 +12,7 @@
   /* background-color */
   background: var(--bg);
   border: 3px solid var(--secondary);
-  box-shadow: 0px 0px 10px rgba(0,0,0,10);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 10);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@
   text-align: center;
 }
 
-.clock span b{
+.clock span b {
   /* transform: rotate(calc(-15deg * var(--i))); */
   display: inline-block;
   font-size: 8px;
@@ -38,8 +38,8 @@
   transform: rotate(calc(-15deg * var(--i)));
 }
 
-.clock::before{
-  content: '';
+.clock::before {
+  content: "";
   position: absolute;
   width: 8px;
   height: 8px;
@@ -63,8 +63,7 @@
 
 @media (max-width: 650px) {
   .container {
-    top: 1.5%;
-    right: 1.5%;
+    right: 15%;
   }
   .clock {
     width: 8rem;
