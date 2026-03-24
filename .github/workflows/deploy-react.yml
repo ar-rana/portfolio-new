@@ -18,6 +18,10 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      VITE_RECAPTCHA_SITEKEY: ${{ secrets.VITE_RECAPTCHA_SITEKEY }}
+      VITE_FUNCTION_KEY: ${{ secrets.VITE_FUNCTION_KEY }}
+      VITE_BASEURL: ${{ vars.VITE_BASEURL }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
