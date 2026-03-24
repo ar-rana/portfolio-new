@@ -38,7 +38,6 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Build
-        working-directory: client
         run: |
           npm ci
           npm run build
