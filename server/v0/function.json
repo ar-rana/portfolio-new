@@ -5,6 +5,7 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
+      "route": "v0/{*path}",
       "methods": [
         "get",
         "post"

@@ -17,7 +17,7 @@ export default function ContactForm() {
     if (!validateForm()) return;
     setLoading(true);
     try {
-      const res = await fetch(`${import.meta.env.VITE_BASEURL}/send-email`, {
+      const res = await fetch(`${import.meta.env.VITE_BASEURL}/api/v0/send-email`, {
         headers: {
           "Content-Type": "application/json",
           "x-functions-key": `${import.meta.env.VITE_FUNCTION_KEY}`,
