@@ -20,6 +20,9 @@
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
+  --highlight: #364d4e;
+  --highlight-light: #436768;
+
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
@@ -48,6 +51,11 @@
 
 body {
   margin: 0;
+}
+
+::selection {
+  background-color: var(--highlight);
+  color: var(--text-primary);
 }
 
 @keyframes app-top-glow-breath {

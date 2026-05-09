@@ -49,14 +49,14 @@ export default function ContactForm() {
       );
 
       const resp = await res.json();
-      console.log(resp);
+      // console.log(resp);
       if (res.ok) {
         openModal(resp.body, "success");
       } else {
         openModal(resp.body, "error");
       }
     } catch (e) {
-      console.log("Some error occured: ", e);
+      // console.log("Some error occured: ", e);
       openModal("Something went wrong. Please try again.", "error");
     } finally {
       setLoading(false);
@@ -167,15 +167,14 @@ export default function ContactForm() {
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
         <DialogContent
           overlayClassName="bg-black/30"
-          className="w-[92vw] max-w-md rounded-lg border border-(-secondary) bg-black/20 backdrop-blur-md"
+          className="w-[92vw] max-w-md rounded-lg border border-(-secondary) bg-black/20 backdrop-blur-md top-[40%]!"
         >
           <DialogHeader className="gap-3">
             <div
-              className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold ${
-                modalTone === "success"
-                  ? "border-emerald-300/30 bg-emerald-300/15 text-emerald-200"
-                  : "border-rose-300/30 bg-rose-300/15 text-rose-200"
-              }`}
+              className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold ${modalTone === "success"
+                ? "border-emerald-300/30 bg-emerald-300/15 text-emerald-200"
+                : "border-rose-300/30 bg-rose-300/15 text-rose-200"
+                }`}
             >
               <i
                 className={`bi ${modalTone === "success" ? "bi-check-circle" : "bi-exclamation-triangle"}`}

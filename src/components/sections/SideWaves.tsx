@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import wavesVideo from '@/assets/video-waves-good.mp4'
 
 interface SideWavesProps {
@@ -7,27 +7,26 @@ interface SideWavesProps {
 
 export function SideWaves({ left = false }: SideWavesProps) {
     const videoRef = useRef<HTMLVideoElement>(null)
-    // 190
+    const [isMuted, setIsMuted] = useState(true)
 
-    // Attempt to automatically play the unmuted video.
-    // If the browser strictly enforces its audio-autoplay block, we catch the Promise rejection
-    // and wait for the user to click anywhere on the screen to trigger the play naturally!
+    // The video starts muted so it can auto-play immediately on load.
+    // On the first user interaction, we unmute the video.
     useEffect(() => {
-        const attemptPlay = async () => {
-            if (videoRef.current) {
-                try {
-                    await videoRef.current.play()
-                } catch (err) {
-                    console.log("Browser blocked unmuted auto-play. Waiting for first click to play video.")
-                    const playOnClick = () => {
-                        videoRef.current?.play()
-                        window.removeEventListener('mousedown', playOnClick)
-                    }
-                    window.addEventListener('mousedown', playOnClick)
-                }
-            }
+        const unmuteOnClick = () => {
+            setIsMuted(false)
+            // Ensure the video is playing in case autoPlay somehow failed
+            videoRef.current?.play().catch(() => { })
+            window.removeEventListener('mousedown', unmuteOnClick)
+            window.removeEventListener('keydown', unmuteOnClick)
         }
-        attemptPlay()
+
+        window.addEventListener('mousedown', unmuteOnClick)
+        window.addEventListener('keydown', unmuteOnClick)
+
+        return () => {
+            window.removeEventListener('mousedown', unmuteOnClick)
+            window.removeEventListener('keydown', unmuteOnClick)
+        }
     }, [])
 
     const containerClasses = `fixed bottom-0 translate-y-[30%] md:translate-y-[45%] lg:translate-y-[50%] w-full z-20 pointer-events-none mix-blend-screen transform-gpu ${left ? 'left-0 rotate-[170deg] scale-x-[-1]' : 'right-0 rotate-190'}`
@@ -42,7 +41,9 @@ export function SideWaves({ left = false }: SideWavesProps) {
 
             <video
                 ref={videoRef}
+                autoPlay
                 loop
+                muted={isMuted}
                 playsInline
                 className={`w-full h-full object-cover scale-y-[-1]`}
             >
@@ -51,3 +52,4 @@ export function SideWaves({ left = false }: SideWavesProps) {
         </div>
     )
 }
+

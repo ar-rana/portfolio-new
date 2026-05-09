@@ -132,6 +132,13 @@ const About = () => {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
+      <div>
+        <i
+          className="bi bi-geo-alt-fill mr-1 text-[1.25em]"
+          aria-hidden="true"
+        />
+        <span>India</span>
+      </div>
 
       <div className="h-2" />
       <a
