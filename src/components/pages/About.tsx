@@ -172,7 +172,7 @@ const About = () => {
           className="bi bi-mortarboard-fill mr-1 text-[1.2em]"
           aria-hidden="true"
         />
-        <span>CGPA: 9.09/10</span>
+        <span>CGPA: 9.15/10</span>
       </div>
     </div>
   );
