@@ -36,6 +36,11 @@
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+
+  /* for small laptops (~14" or less); avoid small devices (tablets/mobiles) */
+  @media (min-width: 1025px) and (max-width: 1370px) and (pointer: fine) {
+    zoom: 0.9;
+  }
 }
 
 #root {
