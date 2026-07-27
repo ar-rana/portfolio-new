@@ -9,15 +9,26 @@ const Home = () => {
       </div>
       <div aria-hidden className="h-2" />
       <div>
-        <span>Originally from Himachal ⛰, raised in Delhi, and currently over the head deep in Computer Science.</span>
+        <span>
+          Originally from Himachal ⛰, raised in Delhi, and currently over the
+          head deep in Computer Science.
+        </span>
       </div>
       {/* <br /> */}
       <div>
-        <span>I like distributed systems and building for scale using Java, TypeScript, and Go. <br /> Currently, I'm spending my time exploring <b>IoT</b>.</span>
+        <span>
+          I like distributed systems and building for scale using Java,
+          TypeScript, and Go. <br /> Currently, I'm spending my time exploring{" "}
+          <b>IoT</b>.
+        </span>
       </div>
       <div aria-hidden className="h-2" />
       <div>
-        <span>When I’m not spending an arguably unhealthy amount of time looking at code, I’m usually checking up on geopolitics, world affairs and defence updates to stay up-to-date with the world.</span>
+        <span>
+          I usually spend most of my time either looking at code or keeping up
+          with geopolitics, world affairs, and defense updates to stay
+          up-to-date with the world.
+        </span>
       </div>
     </div>
   );

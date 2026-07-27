@@ -10,13 +10,13 @@ const defaultImg = "/projects/defaultImg.png";
 const ecommerce = "/projects/ecommerce.png";
 const disasterSys = "/projects/disasterSys.png";
 const scribeAI = "/projects/scribeAI.png";
-const finup = "/projects/finup.png"
+const finup = "/projects/finup.png";
 
 export const projects: ProjectPanel[] = [
   {
     title: "Enterprise E-Commerce Application",
     techStk:
-      "React, Spring Boot, Firestore, Redis, JUnit, Spring Data JPA, PostgreSQL",
+      "React, Spring Boot, Firestore, Redis, JUnit, Spring JPA, PostgreSQL, OpenFeign, Eureka, Docker, Spring Cloud",
     github: "https://github.com/ar-rana/E-Commerce",
     img: ecommerce,
   },
@@ -52,7 +52,7 @@ export const projects: ProjectPanel[] = [
     techStk: "Golang, CosmosDB, React, Tailwind, Recharts, Azure functions",
     github: "https://github.com/ar-rana/Finance-Tracker",
     img: finup,
-    project_link: "http://finup.shores.cv/"
+    project_link: "http://finup.shores.cv/",
   },
   {
     title: "Spring Search",
